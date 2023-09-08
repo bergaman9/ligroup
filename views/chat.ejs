@@ -1,0 +1,35 @@
+<%- include("partials/header") %>
+
+<div id="wrap" class="bg-warning chat">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">ligroup</a>
+        </div>
+    </nav>
+    <div class="container">
+
+        <div class="page-header">
+            <h1>Chat</h1>
+            <hr />
+        </div>
+
+        <div class="col-lg-12">
+            <h1 class="chat-header">Let's chat!</h1>
+            <p class="index-chat-p">You can chat with other people in the site.</p>
+            <div id="chat-wrap">
+                <h2 class="chat-header">Chat</h2>
+                <div id="chat-window">
+                    <div id="output"></div>
+                    <div id="feedback"></div>
+                </div>
+                <input type="text" id="sender" placeholder="Name" required>
+                <input type="text" id="message" placeholder="Message" required>
+                <button id="submitBtn">Submit</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<%- include("partials/footer") %>

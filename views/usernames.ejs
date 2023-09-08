@@ -1,0 +1,153 @@
+<%- include("partials/header") %>
+
+
+<div id="wrap" class="bg-warning">
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">ligroup</a>
+      <form action="/logout" method="post">
+        <button class="btn btn-dark" type="submit">Logout</button>
+      </form>
+  </nav>
+  <div class="container">
+
+    <div class="page-header">
+      <h1>Username List</h1>
+      <hr />
+    </div>
+
+
+    <div class="row">
+      <form action="/usernames" method="get">
+        <div class="filter-section">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label>Gender</label>
+                <select id="gender" name="gender" class="form-control" onchange="handleGenderFilter()">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="any" selected>Any</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label>Platform</label>
+                <select id="platform" name="platform" class="form-control" onchange="handlePlatformFilter();">
+                  <option value="instagram">Instagram</option>
+                  <option value="twitter">Twitter</option>
+                  <option value="snapchat">Snapchat</option>
+                  <option value="discord">Discord</option>
+                  <option value="any" selected>Any</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4 filter-username">
+              <div class="row">
+                <form action="/usernames" method="get">
+                  <button class="btn btn-success filter" type="submit">Filter</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <br>
+    </div>
+
+    <div id="items-container">
+      <div class="row" id="item-section">
+        <% newListItems.forEach(function(item) { %>
+        <% if (item.platform==="instagram" ) { %>
+        <p><a class="items" href="https://www.instagram.com/<%=item.username%>"><i
+              class="fa-brands fa-<%=item.platform%>"></i></a>
+          <%=item.username%>
+        </p>
+        <% } else if (item.platform==="snapchat" ) { %>
+        <p><a class="items" href="https://www.snapchat.com/add/<%=item.username%>"><i
+              class="fa-brands fa-<%=item.platform%>"></i></a>
+          <%=item.username%>
+        </p>
+        <% } else if (item.platform==="twitter" ) { %>
+        <p><a class="items" href="https://www.twitter.com/<%=item.username%>"><i
+              class="fa-brands fa-<%=item.platform%>"></i></a>
+          <%=item.username%>
+        </p>
+        <% } else {%>
+        <p><a class="items" href=""><i class="fa-brands fa-<%=item.platform%>"></i></a>
+          <%=item.username%>
+        </p>
+        <% } %>
+        <% }) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="pagination">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <!-- Display the links to the pages -->
+            <% if (page> 1) { %>
+            <li class="page-item"><a class="page-link text-dark"
+                href="?gender=<%=gender%>&platform=<%=platform%>&page=<%=page-1%>">Previous</a></li>
+            <% } %>
+            <% for (let i=1; i <=pages; i++) { %>
+            <li class="page-item"><a class="page-link text-dark"
+                href="?gender=<%=gender%>&platform=<%=platform%>&page=<%=i%>">
+                <%=i%>
+              </a></li>
+            <% continue; %>
+            <% } %>
+            <% if (page < pages) { %>
+            <li class="page-item"><a class="page-link text-dark"
+                href="?gender=<%=gender%>&platform=<%=platform%>&page=<%=page+1%>">Next</a></li>
+            <% } %>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  url = window.location.href
+
+  if (url.includes("female")) {
+    let options = document.querySelectorAll("option").value;
+
+    options.forEach(option => {
+      if (option.value == "female") {
+        option.setAttribute("selected", "selected")
+      }
+    })
+  }
+
+
+  // function handleGenderFilter() {
+
+  //   // const queryStr = "gender=any&platform=any"
+  //   // const usp = new URLSearchParams(queryStr)
+  //   // console.log(usp)
+
+  //   let gender = document.querySelector("#gender").value
+
+  //   url = window.location.href.split("?")[0] + "?gender=" + gender + "&platform=<%= platform %>"
+  //   location.replace(url)
+  // }
+
+  // function handlePlatformFilter() {
+
+  //   // const queryStr = "gender=any&platform=any"
+  //   // const usp = new URLSearchParams(queryStr)
+  //   // console.log(usp)
+
+  //   let platform = document.querySelector("#platform").value
+
+  //   url = window.location.href.split("?")[0] + "?gender=<%= gender %>" + "&platform=" + platform
+  //   location.replace(url)
+  // }
+</script>
+
+<%- include("partials/footer") %>

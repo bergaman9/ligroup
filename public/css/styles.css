@@ -1,0 +1,195 @@
+#wrap {
+  min-height: 1000px;
+}
+
+.items {
+  font-size: 1.2rem;
+  margin: 7px;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+i.fa-brands {
+  margin-right: 0.5%;
+  padding-left: 2%;
+}
+
+.fa-brands {
+  color: #212529;
+}
+
+i.fa-discord:hover {
+  color: #5865f2;
+}
+
+i.fa-snapchat:hover {
+  color: #ffffff;
+}
+
+i.fa-instagram:hover {
+  color: #d6249f;
+}
+
+i.fa-twitter:hover {
+  color: #00acee;
+}
+
+#footer .fa-brands {
+  color: #ffffff;
+}
+
+.page-header {
+  margin-top: 30px;
+}
+
+#wrap.index {
+  padding-bottom: 15%;
+}
+
+#wrap.chat {
+  padding-bottom: 3%;
+}
+
+.index-info li {
+  margin: 10px;
+}
+
+.form-group {
+  margin-top: 8px;
+}
+
+.button-area button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+a.navbar-brand {
+  font-size: 25px;
+}
+
+.footer-section {
+  color: aliceblue;
+}
+
+.footer-section:hover {
+  color: darkgoldenrod;
+}
+
+.social-media {
+  margin: 3px;
+  color: aliceblue;
+}
+
+.social-media:hover {
+  color: darkgoldenrod;
+}
+
+.social-media-section {
+  padding-left: 60%;
+}
+
+#pagination {
+  margin: 20px 0;
+}
+
+#footer {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+#chat-wrap {
+  max-width: 600px;
+  margin: 30px auto;
+  border: 2px solid #212529;
+  border-radius: 5px;
+}
+
+#chat-window {
+  height: 400px;
+  overflow-y: auto;
+}
+
+#output p {
+  font-size: 15px;
+  padding: 12px;
+}
+
+#output p:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#feedback p {
+  font-size: 13px;
+  padding: 12px;
+}
+
+#output strong {
+  color: #212529;
+}
+
+input {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 20px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  display: block;
+  width: 100%;
+  font-size: 15px;
+}
+
+button#submitBtn {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #212529;
+  color: #fff;
+  border: 0;
+  border-radius: 0 0 5px 5px;
+  width: 100%;
+  padding: 12px 0px;
+  font-size: 17px;
+}
+
+h2.chat-header {
+  background-color: #212529;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 23px;
+}
+
+h1.chat-header {
+  text-align: center;
+  margin: 30px auto 15px;
+}
+
+div .filter {
+  width: 100%;
+}
+
+div.filter-username {
+  padding-top: 3.5%;
+}
+
+div .index-info {
+  padding-top: 7%;
+  padding-left: 15%;
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.index-chat-p {
+  text-align: center;
+}
+
+#items-container {
+  min-height: 1000px;
+}
+
+#item-section {
+  margin-top: 30px;
+}

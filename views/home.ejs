@@ -1,0 +1,103 @@
+<%- include("partials/header") %>
+
+<div id="wrap" class="bg-warning index">
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">ligroup</a>
+    </div>
+  </nav>
+  <div class="container">
+
+    <div class="page-header">
+      <h1>Username List</h1>
+      <hr />
+    </div>
+
+
+    <div class="row">
+
+      <div class="col-lg-6">
+        <form action="/" method="post">
+          <div class="form-group">
+            <label>Username</label>
+            <input onchange="validateUsername()" id="username" class="form-control" type="text" name="username" value=""
+              minlength="6" placeholder="Enter your username" required>
+          </div>
+          <div class="form-group">
+            <label>Platform</label>
+            <select id="platform" class="form-control" name="platform">
+              <option value="instagram">Instagram</option>
+              <option value="twitter">Twitter</option>
+              <option value="snapchat">Snapchat</option>
+              <option value="discord">Discord</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Age</label>
+            <select class="form-control" name="age">
+              <option value="0">13-17</option>
+              <option value="1">18-25</option>
+              <option value="2">26-39</option>
+              <option value="3">40+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <select class="form-control" name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div class="button-area">
+            <button class="btn btn-success" type="submit" onclick="validateform()">Add Me</button>
+          </div>
+
+        </form>
+
+      </div>
+
+      <div class="col-lg-6">
+        <div class="form-group index-info">
+          <h2>Add new friends</h2>
+          <ul>
+            <li>Write your username and select your gender.</li>
+          </ul>
+          <h2>Easy and free</h2>
+          <ul>
+            <li>100% free</li>
+            <li>No registration</li>
+            <li>Just add your username</li>
+          </ul>
+          <h2>Find friends using ligroup</h2>
+          <ul>
+            <li>Use the search filter to find only boys or girls</li>
+            <li>You can chat with other people</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function validateform() {
+    let discord = $("#platform").val()
+    if (discord === "discord") {
+      let usernameValue = $("#username").val()
+      if (usernameValue.at(-5) !== "#") {
+        Swal.fire("You entered wrong Discord username!")
+        $("#username").val("")
+      }
+    }
+  }
+
+  function validateUsername() {
+    let username = document.querySelector("#username").value;
+    console.log(username)
+  }
+</script>
+
+<%- include("partials/footer") %>
