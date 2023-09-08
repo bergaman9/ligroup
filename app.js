@@ -198,6 +198,7 @@ app.post("/", function (req, res) {
     ip: clientIp // IP adresini veritabanına kaydet
   });
 
+
   Username.deleteMany(
     {
       username: userName.username,
